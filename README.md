@@ -92,6 +92,10 @@ We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculat
 
 ## References
 
+### <u> Test Dataset </u>
+
+The used test dataset can be found [here]().
+
 ### <u> Cite </u>
 
 <pre><code>@Article{bootstrapHistoricalMaps,
