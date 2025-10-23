@@ -28,7 +28,7 @@ This repository contains the source code for the visual viewer that accompanies 
 [Bootstrapping unlimited training data for segmenting historical
 maps through explicit semantic layout control and automatic
 aleatoric uncertainty simulation]() </br>
-[**Lukas Arzoumanidis**](https://github.com/luarzou),
+[**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 [**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),  
@@ -106,14 +106,14 @@ DOI = {}
 ### <u> Previous Work </u>
 
 [Semantic segmentation of historical maps using Self-Constructing Graph Convolutional Networks](https://www.tandfonline.com/doi/full/10.1080/15230406.2025.2468304) </br>
-[**Lukas Arzoumanidis**](https://github.com/luarzou),
+[**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 [**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi)
 
 
 [Deep Generation of Synthetic Training Data for the Automated Extraction of Semantic Knowledge from Historical Maps](https://ica-abs.copernicus.org/articles/7/7/2024/index.html) </br>
-[**Lukas Arzoumanidis**](https://github.com/luarzou),
+[**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 **James Ormond Fethers**,
 [**Sethmiya Herath Mudiyanselage**](https://www.researchgate.net/profile/Sethmiya-Herath-Mudiyanselage),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi)
@@ -122,3 +122,4 @@ DOI = {}
 
 ### <u> Troubleshooting </u>
 In case the code is not working for you or you experience some code related problems, please consider opening an issue.
+
