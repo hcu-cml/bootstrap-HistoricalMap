@@ -36,8 +36,8 @@ This repository contains the source code of the visual viewer accompanying our p
 maps through explicit semantic layout control and automatic
 aleatoric uncertainty simulation]() </br>
 [**Lukas Arzoumanidis**](https://github.com/luarzou),
-[**Julius Knechtel**](),
-[**Jan-Henrik Haunert**](),
+[**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
+[**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi), 
 
 - Was ist das Programm → was sieht man, wofür ist es
@@ -95,26 +95,28 @@ We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculat
 ## References
 
 ### <u> Cite </u>
-> **Placeholder**
-<pre><code>@Article{isprs-annals-X-4-W6-2025-9-2025,
-AUTHOR = {Arzoumanidis, L. and Nguyen, S. H. and Johannsen, L. and Rothaut, F. and Li, W. and Dehbi, Y.},
-TITLE = {Object Detection for the Enrichment of Semantic 3D City Models with Roofing Materials},
-JOURNAL = {ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
-VOLUME = {X-4/W6-2025},
-YEAR = {2025},
-PAGES = {9--16},
-DOI = {10.5194/isprs-annals-X-4-W6-2025-9-2025}
+<pre><code>@Article{bootstrapHistoricalMaps,
+AUTHOR = {},
+TITLE = {},
+JOURNAL = {},
+YEAR = {2026},
+PAGES = {x--x},
+DOI = {}
 }</code></pre>
 
 ### <u> Previous Work </u>
 
 [Semantic segmentation of historical maps using Self-Constructing Graph Convolutional Networks](https://www.tandfonline.com/doi/full/10.1080/15230406.2025.2468304) </br>
 [**Lukas Arzoumanidis**](https://github.com/luarzou),
-[**Julius Knechtel**](),
-[**Jan-Henrik Haunert**](),
+[**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
+[**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi)
 
-
+[Deep Generation of Synthetic Training Data for the Automated Extraction of Semantic Knowledge from Historical Maps](https://ica-abs.copernicus.org/articles/7/7/2024/index.html) </br>
+[**Lukas Arzoumanidis**](https://github.com/luarzou),
+[**James Ormond Fethers**](),
+[**Sethmiya Herath Mudiyanselage**](),
+[**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi)
 
 ### <u> Troubleshooting </u>
 In case the code is not working for you or you experience some code related problems, please consider opening an issue.
