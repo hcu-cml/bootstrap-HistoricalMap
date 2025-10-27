@@ -1,4 +1,4 @@
-# Bootstrapping unlimited training data for segmenting historical maps through explicit semantic layout control and automatic aleatoric uncertainty simulation - Viewer
+# Domain-adaptive semantic segmentation for homogeneous cartographic domains with uncertainty-aware synthetic data bootstrapping
 
 ![language](https://img.shields.io/badge/Python-v3.6-icons?logo=python&color=3776ab)
 <!-- ![language](https://img.shields.io/badge/JavaScript-ES2017-icons?logo=javascript&color=f7df1e) 
@@ -14,8 +14,7 @@
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Layers](#layers)
-2. [Requirements](#requirements)
-3. [Installation](#installation)
+3. [Setup & Starting the Viewer](#installation)
 4. [Starting the Viewer](#starting-the-viewer)
 5. [Resources and Acknowledgements](#resources-and-acknowledgements)
 6. [References](#references)
@@ -23,11 +22,9 @@
 
 ## Project Description
 
-This repository contains the source code for the visual viewer that accompanies our paper:
+This repository contains the source code for our paper:
 
-[Bootstrapping unlimited training data for segmenting historical
-maps through explicit semantic layout control and automatic
-aleatoric uncertainty simulation]() </br>
+[Domain-adaptive semantic segmentation for homogeneous cartographic domains with uncertainty-aware synthetic data bootstrapping]() </br>
 [**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 [**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
@@ -37,6 +34,9 @@ aleatoric uncertainty simulation]() </br>
  Which proposes a novel method for historical map generation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion. Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding semantic class annotations for land cover classes that can be used as ground-truth training data for deep learning models.
 
 In our paper, we demonstrate the efficacy and versatility of our method by generating maps based on a historical urban map corpus of Berlin. This viewer presents the predicted land cover classes alongside the historical map corpus and OpenStreetMap (OSM) data styled to match the historical maps.
+
+## Requirements to run the code
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Layers
 
@@ -70,18 +70,9 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 | [ALKIS Berlin Flurstücke](https://gdi.berlin.de/services/wfs/alkis_flurstuecke?service=WFS&version=2.0.0&request=getCapabilities) |• Visualise the parcel boundaries | https://daten.berlin.de/datensaetze/alkis-berlin-flurstucke-wfs-1bc014d7|
 |[ALKIS Berlin](https://gdi.berlin.de/services/wfs/alkis?service=WFS&version=2.0.0&request=GetCapabilities) |• Expand the streets to reach the buildings | https://advmis.geodatenzentrum.de/trefferanzeige?docuuid=66e083ae-2564-3b82-9f77-0c770703f109|
 
+## Setup & Starting the Viewer
 
-
-## Requirements
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Installation
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Starting the Viewer
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To host the viewer you will have the possibility to run Nginx on bare metal or host it using docker. A Dockerfile with the basic structure (without data) of the viewer hostet with Nginx is provided.
 
 ## Resources and Acknowledgements
 Our CycleGAN approach is based on the concept and implementation of [CycleGAN](https://colab.research.google.com/github/nivedwho/Colab/blob/main/CycleGAN.ipynb), introduced in the paper ["Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks."](https://ieeexplore.ieee.org/document/8237506) published by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
@@ -102,7 +93,7 @@ The used test dataset can be found [here]().
 AUTHOR = {},
 TITLE = {},
 JOURNAL = {},
-YEAR = {2026},
+YEAR = {},
 PAGES = {x--x},
 DOI = {}
 }</code></pre>
@@ -119,7 +110,7 @@ DOI = {}
 [Deep Generation of Synthetic Training Data for the Automated Extraction of Semantic Knowledge from Historical Maps](https://ica-abs.copernicus.org/articles/7/7/2024/index.html) </br>
 [**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 **James Ormond Fethers**,
-[**Sethmiya Herath Mudiyanselage**](https://www.researchgate.net/profile/Sethmiya-Herath-Mudiyanselage),
+**Sethmiya Herath Mudiyanselage**,
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi)
 
 
