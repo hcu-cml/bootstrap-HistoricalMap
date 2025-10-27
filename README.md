@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 | Layer | Information |
 |:-    | :-     |
 | Bootstrapped Historical Maps (OSM)| v.i. |
-|Straube Maps|• Map corpus analysed in this study comprising 14 historical city maps of Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
+|Straube Maps|• Map corpus analysed in this study comprising 39 historical city maps of Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
 | [OSM](https://www.openstreetmap.org/) | • Shows the default OSM tile style|
 | Predicted Land Cover Classes |• Results of the semantic segmentation using a synthetically generated dataset |
 | [ALKIS Berlin](https://www.berlin.de/sen/sbw/stadtdaten/geoinformation/liegenschaftskataster/alkis/)| • Shows a map of Germany’s Authoritative Cadastral Information System (ger.  Amtliches Liegenschaftskatasterinformationssystem, ALKIS) |
