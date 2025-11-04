@@ -1,23 +1,22 @@
 # Domain-Adaptive Semantic Segmentation For Historical Map Corpora Using Synthetically Generated Training Data
 
 ![language](https://img.shields.io/badge/Python-v3.6-icons?logo=python&color=3776ab)
-![language](https://img.shields.io/badge/JavaScript-ES2017-icons?logo=javascript&color=f7df1e) 
-![language](https://img.shields.io/badge/CSS-3-663399?logo=css&logoColor=663399)
-![language](https://img.shields.io/badge/HTML-5-icons?logo=html5&color=e34f26
+![language](https://img.shields.io/badge/JavaScript-icons?logo=javascript&color=f7df1e) 
+![language](https://img.shields.io/badge/HTML-icons?logo=html5&color=e34f26
 )
-<!-- ![Node.js](https://img.shields.io/badge/Node.js-v20.0+-green?logo=node.js) -->
-
 
 
 ![alt text](img/fig_example_pic.png)
 
+
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Layers](#layers)
-3. [Setup & Starting the Viewer](#installation)
-4. [Starting the Viewer](#starting-the-viewer)
-5. [Resources and Acknowledgements](#resources-and-acknowledgements)
-6. [References](#references)
+3. [Layers](#layers)
+4. [Setup & Starting the Viewer](#installation)
+5. [Starting the Viewer](#starting-the-viewer)
+6. [Resources and Acknowledgements](#resources-and-acknowledgements)
+7. [References](#references)
 
 
 ## Project Description
@@ -30,9 +29,9 @@ This repository contains the source code for our paper:
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),
 
-In our paper, we demonstrate the efficacy and versatility of our method by generating historical maps based on style transfer form an original historical urban map corpus of Berlin. We present the predicted land cover classes alongside the historical map corpus and OpenStreetMap (OSM) data styled to match the historical maps in our interactive webviewer: .
+We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://www.historicalmaps.luarzou.de/
 
-## Requirements to run the code
+## Run code for domain-adaptive semantic segmentation
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Layers
@@ -69,12 +68,11 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 
 ## Setup & Starting the Viewer
 
-To host the viewer you will have the possibility to run Nginx on bare metal or host it using docker. A Dockerfile with the basic structure (without data) of the viewer hostet with Nginx is provided. Please inseart your data at the folders xy.
+To host the viewer you will have the possibility to Nginx or Apache2. A Dockerfile with the basic structure (without data and API keys) of the viewer is provided as source code. Please inseart your data at the folders xy.
 
 ## Resources and Acknowledgements
 
 We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculation.
-
 
 
 ## References
