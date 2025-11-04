@@ -1,22 +1,12 @@
 # Domain-Adaptive Semantic Segmentation For Historical Map Corpora Using Synthetically Generated Training Data
 
 ![language](https://img.shields.io/badge/Python-v3.6-icons?logo=python&color=3776ab)
-![language](https://img.shields.io/badge/JavaScript-icons?logo=javascript&color=f7df1e) 
-![language](https://img.shields.io/badge/HTML-icons?logo=html5&color=e34f26
-)
+![language](https://img.shields.io/badge/JavaScript-icons?logo=javascript&color=5b5b5b) 
+![language](https://img.shields.io/badge/CSS-5b5b5b?logo=css&logoColor=663399)
+![language](https://img.shields.io/badge/HTML-icons?logo=html5&color=5b5b5b)
 
 
 ![alt text](img/fig_example_pic.png)
-
-
-## Table of Contents
-1. [Project Description](#project-description)
-2. [Layers](#layers)
-3. [Layers](#layers)
-4. [Setup & Starting the Viewer](#installation)
-5. [Starting the Viewer](#starting-the-viewer)
-6. [Resources and Acknowledgements](#resources-and-acknowledgements)
-7. [References](#references)
 
 
 ## Project Description
@@ -31,8 +21,8 @@ This repository contains the source code for our paper:
 
 We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://www.historicalmaps.luarzou.de/
 
-## Run code for domain-adaptive semantic segmentation
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Domain-adaptive semantic segmentation
+test
 
 ## Layers
 
@@ -68,7 +58,7 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 
 ## Setup & Starting the Viewer
 
-To host the viewer you will have the possibility to Nginx or Apache2. A Dockerfile with the basic structure (without data and API keys) of the viewer is provided as source code. Please inseart your data at the folders xy.
+You can host the viewer using Nginx or Apache2. The repository provides the source code with the basic viewer setup (excluding data and API keys). Before deployment, add your historical maps and predicted land use classes to the <code>data</code> directory.
 
 ## Resources and Acknowledgements
 
