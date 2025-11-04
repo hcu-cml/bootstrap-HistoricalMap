@@ -22,7 +22,7 @@ This repository contains the source code for our paper:
 We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://www.historicalmaps.luarzou.de/
 
 ## Domain-adaptive semantic segmentation
-test
+Use the segmentation model implementation available at https://github.com/hcu-cml/SCGCN-histMap-segmentation.
 
 ## Layers
 
@@ -35,14 +35,14 @@ test
 | [ALKIS Berlin](https://www.berlin.de/sen/sbw/stadtdaten/geoinformation/liegenschaftskataster/alkis/)| • Shows a map of Germany’s Authoritative Cadastral Information System (ger.  Amtliches Liegenschaftskatasterinformationssystem, ALKIS) |
 
 
-### Bootstrapped Historical Maps (OSM)
+### Generated Historical Maps (OSM)
 
 To visually match the historical Straube maps of Berlin, OpenStreetMap data was styled using a style document following the [MapLibre Style Specification](https://maplibre.org/maplibre-style-spec/). 
 This style document is a JSON object defining the visual appearance of a map and was created using the open-source visual editor [Maputnik](https://maputnik.github.io/).
 It was then applied to third-party tile services. 
 To further match the Straube maps, additional Web Feature Services(WFS) were integrated. <br>
 
-#### <u> Vector tile Services </u>
+#### <u> Vector Tile Services </u>
 
 | Service | Information |
 |:-    | :-     |
@@ -56,7 +56,7 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 | [ALKIS Berlin Flurstücke](https://gdi.berlin.de/services/wfs/alkis_flurstuecke?service=WFS&version=2.0.0&request=getCapabilities) |• Visualise the parcel boundaries | https://daten.berlin.de/datensaetze/alkis-berlin-flurstucke-wfs-1bc014d7|
 |[ALKIS Berlin](https://gdi.berlin.de/services/wfs/alkis?service=WFS&version=2.0.0&request=GetCapabilities) |• Expand the streets to reach the buildings | https://advmis.geodatenzentrum.de/trefferanzeige?docuuid=66e083ae-2564-3b82-9f77-0c770703f109|
 
-## Setup & Starting the Viewer
+## Using the Viewer
 
 You can host the viewer using Nginx or Apache2. The repository provides the source code with the basic viewer setup (excluding data and API keys). Before deployment, add your historical maps and predicted land use classes to the <code>data</code> directory.
 
