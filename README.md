@@ -1,11 +1,11 @@
-# Domain-adaptive semantic segmentation for homogeneous cartographic domains with uncertainty-aware synthetic data bootstrapping
+# Domain-Adaptive Semantic Segmentation For Historical Map Corpora Using Synthetically Generated Training Data
 
 ![language](https://img.shields.io/badge/Python-v3.6-icons?logo=python&color=3776ab)
-<!-- ![language](https://img.shields.io/badge/JavaScript-ES2017-icons?logo=javascript&color=f7df1e) 
+![language](https://img.shields.io/badge/JavaScript-ES2017-icons?logo=javascript&color=f7df1e) 
 ![language](https://img.shields.io/badge/CSS-3-663399?logo=css&logoColor=663399)
 ![language](https://img.shields.io/badge/HTML-5-icons?logo=html5&color=e34f26
 )
-![Node.js](https://img.shields.io/badge/Node.js-v20.0+-green?logo=node.js) -->
+<!-- ![Node.js](https://img.shields.io/badge/Node.js-v20.0+-green?logo=node.js) -->
 
 
 
@@ -28,12 +28,9 @@ This repository contains the source code for our paper:
 [**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 [**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
-[**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),  
+[**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),
 
-
- Which proposes a novel method for historical map generation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion. Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding semantic class annotations for land cover classes that can be used as ground-truth training data for deep learning models.
-
-In our paper, we demonstrate the efficacy and versatility of our method by generating maps based on a historical urban map corpus of Berlin. This viewer presents the predicted land cover classes alongside the historical map corpus and OpenStreetMap (OSM) data styled to match the historical maps.
+In our paper, we demonstrate the efficacy and versatility of our method by generating historical maps based on style transfer form an original historical urban map corpus of Berlin. We present the predicted land cover classes alongside the historical map corpus and OpenStreetMap (OSM) data styled to match the historical maps in our interactive webviewer: .
 
 ## Requirements to run the code
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -72,10 +69,9 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 
 ## Setup & Starting the Viewer
 
-To host the viewer you will have the possibility to run Nginx on bare metal or host it using docker. A Dockerfile with the basic structure (without data) of the viewer hostet with Nginx is provided.
+To host the viewer you will have the possibility to run Nginx on bare metal or host it using docker. A Dockerfile with the basic structure (without data) of the viewer hostet with Nginx is provided. Please inseart your data at the folders xy.
 
 ## Resources and Acknowledgements
-Our CycleGAN approach is based on the concept and implementation of [CycleGAN](https://colab.research.google.com/github/nivedwho/Colab/blob/main/CycleGAN.ipynb), introduced in the paper ["Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks."](https://ieeexplore.ieee.org/document/8237506) published by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
 
 We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculation.
 
