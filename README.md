@@ -68,7 +68,7 @@ We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculat
 
 ### <u> Test Dataset </u>
 
-The used test dataset can be found [here]().
+The used test dataset can be found [here](https://zenodo.org/records/17579452).
 
 ### <u> Cite </u>
 
@@ -100,5 +100,6 @@ DOI = {}
 
 ### <u> Troubleshooting </u>
 In case the code is not working for you or you experience some code related problems, please consider opening an issue.
+
 
 
