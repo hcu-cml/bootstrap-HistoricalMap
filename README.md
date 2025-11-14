@@ -19,6 +19,8 @@ This repository contains the source code for our paper:
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),
 
+Which proposes a novel method for historical map generation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion. Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding semantic class annotations for land cover classes that can be used as ground-truth training data for deep learning models.
+
 We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://www.historicalmaps.luarzou.de/
 
 ## Domain-adaptive semantic segmentation
@@ -60,6 +62,8 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 You can host the viewer using Nginx or Apache2. The repository provides the source code with the basic viewer setup (excluding data and API keys). Before deployment, add your historical maps and predicted land use classes to the <code>data</code> directory.
 
 ## Resources and Acknowledgements
+
+Our CycleGAN approach is based on the concept and implementation of CycleGAN, introduced in the paper "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks." published by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
 
 We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculation.
 
