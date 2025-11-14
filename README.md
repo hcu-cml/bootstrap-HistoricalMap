@@ -1,4 +1,4 @@
-# Domain-Adaptive Semantic Segmentation For Historical Map Corpora Using Synthetically Generated Training Data
+# Automatic Uncertainty-Aware Synthetic Data Bootstrapping for Historical Map Segmentation
 
 ![language](https://img.shields.io/badge/Python-v3.6-icons?logo=python&color=3776ab)
 ![language](https://img.shields.io/badge/JavaScript-icons?logo=javascript&color=5b5b5b) 
@@ -13,7 +13,7 @@
 
 This repository contains the source code for our paper:
 
-[Domain-adaptive semantic segmentation for homogeneous cartographic domains with uncertainty-aware synthetic data bootstrapping]() </br>
+[Automatic Uncertainty-Aware Synthetic Data Bootstrapping for Historical Map Segmentation]() </br>
 [**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
 [**Julius Knechtel**](https://www.igg.uni-bonn.de/geoinfo/en/team/knechtel),
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
