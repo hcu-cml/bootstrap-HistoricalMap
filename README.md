@@ -21,7 +21,7 @@ This repository contains the source code for our paper:
 
 Which proposes a novel method for historical map generation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion. Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding semantic class annotations for land cover classes that can be used as ground-truth training data for deep learning models.
 
-We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://www.historicalmaps.luarzou.de/
+We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://88.198.55.211/map/
 
 ## Domain-adaptive semantic segmentation
 Use the segmentation model implementation available at https://github.com/hcu-cml/SCGCN-histMap-segmentation.
