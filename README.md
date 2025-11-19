@@ -63,7 +63,10 @@ You can host the viewer using Nginx or Apache2. The repository provides the sour
 
 ## Resources and Acknowledgements
 
-Our CycleGAN approach is based on the concept and implementation of CycleGAN, introduced in the paper "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks." published by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
+The GAN-based approach is based on the concept and implementation of CycleGAN, introduced in the paper "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks." by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
+
+The Diffusion-based approach is based on the concept and implementation of UNSB, introduced in the paper: "Unpaired image-to-image translation via
+neural schroedinger bridge". by Kim, B., Kwon, G., Kim, K., Ye, J.C.
 
 We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculation.
 
