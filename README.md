@@ -41,7 +41,7 @@ Use the segmentation model implementation available at https://github.com/hcu-cm
 To visually match the historical Straube maps of Berlin, OpenStreetMap data was styled using a style document following the [MapLibre Style Specification](https://maplibre.org/maplibre-style-spec/). 
 This style document is a JSON object defining the visual appearance of a map and was created using the open-source visual editor [Maputnik](https://maputnik.github.io/).
 It was then applied to third-party tile services. 
-To further match the Straube maps, additional Web Feature Services(WFS) were integrated. <br>
+To further match the Straube maps, additional vector tiles were generated and integrated. <br>
 
 #### <u> Vector Tile Services </u>
 
@@ -50,12 +50,11 @@ To further match the Straube maps, additional Web Feature Services(WFS) were int
 | [Maptiler](https://www.maptiler.com/) |• Provides OSM vector tiles |
 |[locationIQ](https://locationiq.com/) |• Provides information on building types <br> • Used to style state and municipal buildings, private institutions and generic buildings differently  |
 
-#### <u> WFS Sources </u>
+#### <u> Sources - Generated Vector Tiles </u>
 
-| Service | Usage | Description |
-|:-    | :-     | :-     |
-| [ALKIS Berlin Flurstücke](https://gdi.berlin.de/services/wfs/alkis_flurstuecke?service=WFS&version=2.0.0&request=getCapabilities) |• Visualise the parcel boundaries | https://daten.berlin.de/datensaetze/alkis-berlin-flurstucke-wfs-1bc014d7|
-|[ALKIS Berlin](https://gdi.berlin.de/services/wfs/alkis?service=WFS&version=2.0.0&request=GetCapabilities) |• Expand the streets to reach the buildings | https://advmis.geodatenzentrum.de/trefferanzeige?docuuid=66e083ae-2564-3b82-9f77-0c770703f109|
+| Service | Usage |
+|:-    | :-     |
+|[ALKIS Berlin](https://gdi.berlin.de/geonetwork/srv/api/records/0a7c53a5-b29d-3f45-9734-1c811045e6c2) |• Expand the streets to reach the buildings <br> • Visualise the parcel boundaries| 
 
 ## Using the Viewer
 

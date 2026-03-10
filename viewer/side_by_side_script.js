@@ -1,99 +1,14 @@
 // Data Sources → Add your API-Key
-const maptilerURL = 'Your API-Key';
-const locationiqURL = 'Your API-Key';
+const maptilerURL = 'https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=YOUR-API-KEY';
+const locationiqURL = 'https://tiles.locationiq.com/v3/pbf/tiles.json?key=YOUR-API-KEY';
+
 
 // OSM Layer
 var osmLayer = new ol.layer.Tile({
   source: new ol.source.OSM(),
-  title: 'OSM',
+  title: 'OpenStreeMap',
   type: 'base1',
   visible: true
-});
-
-// WFS Layer
-var newSourceFlurstuecke = new ol.source.Vector({
-  format: new ol.format.GeoJSON(),
-  url: function(extent) {
-    return 'https://gdi.berlin.de/services/wfs/alkis_flurstuecke?' +
-      'service=WFS&version=2.0.0&request=GetFeature&' +
-      'typenames=alkis_flurstuecke:flurstuecke&' +
-      'srsname=EPSG:3857&' +
-      'bbox=' + extent.join(',') + ',EPSG:3857&' +
-      'outputFormat=application/json';
-  },
-  strategy: ol.loadingstrategy.bbox
-});
-
-var flurstueckeLayer = new ol.layer.Vector({
-  source: newSourceFlurstuecke,
-  style: function(feature, resolution) {
-    
-    const zoom = map.getView().getZoomForResolution(resolution);
-
-    let width = 1; 
-    if (zoom <= 15) {
-      width = 0.05;   
-    } else if (zoom > 15 && zoom <= 16) {
-      width = 0.1;   
-    } else if (zoom > 16 && zoom <= 17) {
-      width = 0.4;   
-    } else if (zoom > 17 && zoom < 18) {
-      width = 1.0;   
-    } else if (zoom >= 18) {
-      width = 1.5;   
-    }
-
-    return new ol.style.Style({
-      stroke: new ol.style.Stroke({
-        color: '#5C5441',
-        width: width
-      })
-    });
-  }
-});
-
-
-var newSourceStrassen = new ol.source.Vector({
-  format: new ol.format.GeoJSON(),
-url: function(extent) {
-  return 'https://gdi.berlin.de/services/wfs/alkis?' +
-    'service=WFS&version=2.0.0&request=GetFeature&' +
-    'typenames=alkis:tatsaechlichenutzungflaechen&' +
-    'srsname=EPSG:3857&' +
-    'outputFormat=application/json&' +
-    "CQL_FILTER=" + encodeURIComponent("bezeich='AX_Strassenverkehr'");
-},
-  strategy: ol.loadingstrategy.bbox
-});
-
-var strassenLayer = new ol.layer.Vector({
-  source: newSourceStrassen,
-  style: function(feature, resolution) {
-    const zoom = map.getView().getZoomForResolution(resolution);
-
-    let width = 1; 
-    if (zoom <= 15) {
-      width = 0.05;   
-    } else if (zoom > 15 && zoom <= 16) {
-      width = 0.1;   
-    } else if (zoom > 16 && zoom <= 17) {
-      width = 0.4;   
-    } else if (zoom > 17 && zoom < 18) {
-      width = 1.0;   
-    } else if (zoom >= 18) {
-      width = 1.5;  
-    }
-
-    return new ol.style.Style({
-      fill: new ol.style.Fill({
-        color: '#DCC894'  
-      }),
-      stroke: new ol.style.Stroke({
-        color: '#DCC894',
-        width: width
-      })
-  })
-}
 });
 
 
@@ -102,7 +17,7 @@ var segMaskLayer = new ol.layer.Tile({
   source: new ol.source.XYZ({
     url: 'data/predicted_masks/{z}/{x}/{y}.png',
   }),
-  title: 'Predicted Land Cover Classes',
+  title: 'Predicted Land Cover Classes (uncertainty simulation through CycleGAN)',
   type: 'base1',
   visible: false
 });
@@ -112,35 +27,81 @@ var segMaskLayer = new ol.layer.Tile({
 const geotiffLayerRight = new ol.layer.Tile({
   source: new ol.source.XYZ({
       url: 'data/historical_maps/{z}/{x}/{y}.png',
+      attributions: [`© <a href="https://gdi.berlin.de/geonetwork/srv/ger/catalog.search#/metadata/9271450c-f95a-358a-9cff-093484cb73ae" target="_blank" rel="noopener noreferrer">Staatsbibliothek zu Berlin SPK; Jul. Straube's Übersichtsplan von Berlin, Kart. X 18200</a>`]
   }),
-  title: 'Straube Maps',
+  title: 'Straube Maps, Berlin 1910',
   type: 'base2',
-  visible: true
+  visible: true,
+});
+
+
+// Aerial images Berlin 1928 Layer
+const aerialImageLayer = new ol.layer.Tile({
+  source: new ol.source.XYZ({
+      url: 'https://tiles.codefor.de/berlin/geoportal/luftbilder/1928/{z}/{x}/{y}.png',
+      attributions: [`© <a href=\"https://gdi.berlin.de/geonetwork/srv/ger/catalog.search#/metadata/6b746499-7354-3a3a-aa70-60e1fb37f993\" target=\"_blank\">Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin / Luftbilder 1928, Maßstab 1:4000</a>`]
+  }),
+  title: 'Aerial Images, Berlin 1928',
+  type: 'base2',
+  visible: false
 });
 
 
 
 // OSM styled Layer
-// Create a VectorTile source (tiles must match the style.json definition)
+// Vector Tiles for streets and parcel boundaries
+var streetSource = new ol.source.VectorTile({
+  format: new ol.format.MVT(),
+  url: 'data/streets_parcel_boundaries/{z}/{x}/{y}.pbf',
+  attributions: [`© <a href=\"https://gdi.berlin.de/geonetwork/srv/api/records/0a7c53a5-b29d-3f45-9734-1c811045e6c2\" target=\"_blank\">Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin / ALKIS Berlin</a>`]
+});
+
+var streetLayer = new ol.layer.VectorTile({
+  source: streetSource,
+  style: function(feature, resolution) {
+    const zoom = map.getView().getZoomForResolution(resolution);
+    
+    let width = 1;
+    if (zoom <= 15) width = 0.05;
+    else if (zoom > 15 && zoom <= 16) width = 0.1;
+    else if (zoom > 16 && zoom <= 17) width = 0.4;
+    else if (zoom > 17 && zoom < 18) width = 1.0;
+    else if (zoom >= 18) width = 1.5;
+
+    if (feature.get('BEZEICH') === 'AX_Strassenverkehr') {
+      return new ol.style.Style({
+        fill: new ol.style.Fill({ color: '#DCC894' }),
+        stroke: new ol.style.Stroke({ color: '#DCC894', width: width })
+      });
+    } else if (feature.get('bezeich') === 'AX_Flurstueck') {
+      return new ol.style.Style({
+        stroke: new ol.style.Stroke({ color: '#5C5441', width: width })
+      });
+    } 
+  },
+});
+
+
+// Create a VectorTile source
 const osmStyledSourceBackground = new ol.source.VectorTile({
   format: new ol.format.MVT(),
-  url: [locationiqURL, maptilerURL], // or the URL(s) in your style.json
+  url: [locationiqURL, maptilerURL], 
 });
 
 const osmStyledSourceBuildings = new ol.source.VectorTile({
   format: new ol.format.MVT(),
-  url: [locationiqURL, maptilerURL], // or the URL(s) in your style.json
+  url: [locationiqURL, maptilerURL], 
 });
 
 const osmStyledSourceStreetsLabels = new ol.source.VectorTile({
   format: new ol.format.MVT(),
-  url: [locationiqURL, maptilerURL], // or the URL(s) in your style.json
+  url: [locationiqURL, maptilerURL], 
 });
 
 
 const osmStyledLayerBackground = new ol.layer.VectorTile({
   source: osmStyledSourceBackground,
-  title: 'Bootstrapped Historical Maps (OSM)',
+  title: 'Style Transferred Historical Maps (OSM)',
   type: 'base2',
   visible: false
 });
@@ -149,9 +110,14 @@ const osmStyledLayerBuildings = new ol.layer.VectorTile({
   source: osmStyledSourceBuildings,
 });
 
-const osmStyledLayerStreetsLabels = new ol.layer.VectorTile({
+const osmStyledLayerStreets = new ol.layer.VectorTile({
   source: osmStyledSourceStreetsLabels,
 });
+
+const osmStyledLayerLabels = new ol.layer.VectorTile({
+  source: osmStyledSourceStreetsLabels,
+});
+
 
 // Apply the style.json 
 olms.applyStyle(osmStyledLayerBackground, 'libs/openstreetmap_style_22_alt_color.json', [
@@ -207,7 +173,8 @@ olms.applyStyle(osmStyledLayerBackground, 'libs/openstreetmap_style_22_alt_color
             "Wetland and swamp-outline",
             "Tidalflat",
             "Wood",
-            "Wood-outline"]) 
+            "Wood-outline"])
+
 olms.applyStyle(osmStyledLayerBuildings, 'libs/openstreetmap_style_22_alt_color.json', ['Building state', 
             'Building state-outline', 
             'Building private2', 
@@ -215,9 +182,11 @@ olms.applyStyle(osmStyledLayerBuildings, 'libs/openstreetmap_style_22_alt_color.
             'Building private-outline', 
             'Building all', 
             'Building all-outline', 
-            'Building rail']) 
+            'Building rail'])
 
-olms.applyStyle(osmStyledLayerStreetsLabels, 'libs/openstreetmap_style_22_alt_color.json', [            "Ferry line",
+osmStyledLayerBuildings.getSource().setAttributions('© <a href="https://locationiq.com/" target="_blank" rel="noopener noreferrer"> LocationIQ')
+
+olms.applyStyle(osmStyledLayerStreets, 'libs/openstreetmap_style_22_alt_color.json', [      
             "Highway link tunnel outline",
             "Service tunnel outline",
             "Link tunnel outline",
@@ -269,7 +238,17 @@ olms.applyStyle(osmStyledLayerStreetsLabels, 'libs/openstreetmap_style_22_alt_co
             "Footway path",
             "Footpath-outline",
             "Footpath",
-            // "Subway line",
+            "Primary road link",
+            "Trunk road link",
+            "Highway road link",
+            "Service road",
+            "Raceway road",
+            "Minor road",
+            "Secondary road",
+            "Tertiary road",
+            "Primary road",
+            "Trunk road",
+            "Highway road",
             "Major rail",
             "Minor rail",
             "Major rail hatching",
@@ -310,12 +289,6 @@ olms.applyStyle(osmStyledLayerStreetsLabels, 'libs/openstreetmap_style_22_alt_co
             "Oneway path",
             "Oneway",
             "Oneway opposite",
-            "Ferry labels",
-            "Road labels",
-            "Tertiary road shield",
-            "Secondary road shield",
-            "Primary road shield",
-            "Highway shield",
             "Trunk road under construction dash",
             "Trunk bridge under construction dash",
             "Secondary road under construction dash",
@@ -328,7 +301,17 @@ olms.applyStyle(osmStyledLayerStreetsLabels, 'libs/openstreetmap_style_22_alt_co
             "Minor bridge under construction dash",
             "Secondary bridge under construction dash",
             "Primary bridge under construction",
-            "Primary bridge under construction dash",
+            "Primary bridge under construction dash"
+            ])
+            
+olms.applyStyle(osmStyledLayerLabels, 'libs/openstreetmap_style_22_alt_color.json', [            
+            "Ferry line",
+            "Ferry labels",
+            "Road labels",
+            "Tertiary road shield",
+            "Secondary road shield",
+            "Primary road shield",
+            "Highway shield",
             "House number labels",
             "Major airport labels",
             "Airport labels",
@@ -378,7 +361,27 @@ olms.applyStyle(osmStyledLayerStreetsLabels, 'libs/openstreetmap_style_22_alt_co
             "City labels",
             "Capital city labels",
             "Country labels",
-            "Disputed border"]) 
+            "Disputed border"])
+
+
+// hide layers not selected
+const osmStyledGroupLayers = [
+  osmStyledLayerBuildings,
+  osmStyledLayerStreets,
+  osmStyledLayerLabels,
+  streetLayer
+];
+
+osmStyledGroupLayers.forEach(l => l.setVisible(false));
+
+osmStyledLayerBackground.on('change:visible', function () {
+  const isVisible = this.getVisible();
+
+  osmStyledGroupLayers.forEach(layer => {
+    layer.setVisible(isVisible);
+  });
+});
+
 
 // Mock Layers for Titles
 const base1Title = new ol.layer.Tile({
@@ -416,10 +419,9 @@ var controls = [
 var map = new ol.Map({
   target: 'map',
   view: view,
-  layers: [base2Title, osmStyledLayerBackground, osmStyledLayerBuildings, strassenLayer, osmStyledLayerStreetsLabels, flurstueckeLayer, geotiffLayerRight, base1Title, osmLayer, segMaskLayer],
+  layers: [base2Title, osmStyledLayerBackground, osmStyledLayerBuildings, osmStyledLayerStreets, streetLayer, osmStyledLayerLabels, geotiffLayerRight, aerialImageLayer, base1Title, osmLayer, segMaskLayer],
   controls: controls
 });
-
 
 // layer switcher
 var layerSwitcher = new LayerSwitcher({
@@ -433,11 +435,9 @@ map.addControl(layerSwitcher);
 // swipe control
 var swipe_control = new ol.control.Swipe({
   layers: [osmLayer, segMaskLayer],
-  rightLayers: [osmStyledLayerBackground, geotiffLayerRight],
+  rightLayers: [osmStyledLayerBackground, geotiffLayerRight, aerialImageLayer],
 });
 map.addControl(swipe_control);
-
-
 
 
 

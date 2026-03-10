@@ -308,16 +308,16 @@
   "pitch": 0,
   "sources": {
     "openmaptiles": {
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=Your API-Key",
+      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=YOUR-API-KEY",
       "type": "vector"
     },
     "locationiq": {
       "type": "vector",
-      "url": "https://tiles.locationiq.com/v3/pbf/tiles.json?key=Your API-Key"
+      "url": "https://tiles.locationiq.com/v3/pbf/tiles.json?key=YOUR-API-KEY"
     }
   },
   "sprite": "https://api.maptiler.com/maps/openstreetmap/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=Your API-Key",
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=YOUR-API-KEY",
   "layers": [
     {
       "id": "Background",
