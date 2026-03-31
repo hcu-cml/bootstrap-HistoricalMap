@@ -21,7 +21,7 @@ This repository contains the source code for our paper:
 
 which proposes a novel method for historical map generation and land-cover segmentation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion (SD). Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding land-cover ground truth that are used as training data for supervised learning approaches.
 
-We showcase our method’s effectiveness by generating historically-styled maps via style transfer from a real historical map corpus (in this work Straube maps). The land-cover predictions, real historical maps, modern vector data (OSM) and style-transferred historical maps can be explored in our interactive [web viewer.](https://www.cml.hcu-hamburg.de/demos/historicalMaps-bootstrapping/viewer/)
+We showcase our method’s effectiveness by generating historically-styled maps via style transfer from a real historical map corpus (in this work Straube maps). The land-cover predictions, real historical maps, modern vector data (OSM) and historically-styled maps can be explored in our interactive [web viewer.](https://www.cml.hcu-hamburg.de/demos/historicalMaps-bootstrapping/viewer/)
 
 ## Domain-adaptive semantic segmentation
 Use the segmentation model implementation available at https://github.com/hcu-cml/SCGCN-histMap-segmentation.
