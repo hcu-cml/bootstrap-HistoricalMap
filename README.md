@@ -59,14 +59,14 @@ To further match the Straube maps, additional vector tiles were generated and in
 
 ## Using the Viewer
 
-You can host the viewer using Nginx or Apache2. The repository provides the source code with the basic viewer setup (excluding data and API keys). Before deployment, add your historical maps and predicted land use classes to the <code>data</code> directory.
+You can host the viewer using Nginx or Apache2. The repository provides the source code with the basic viewer setup (excluding data and API keys). Before deployment, add your historical maps and predicted land use classes to the <code>data</code> directory and add your API keys for [Maptiler](https://www.maptiler.com/) and [locationIQ](https://locationiq.com/) to the <code>side_by_side_script</code> and <code>openstreetmap_style_22_alt_color</code> files.
 
 ## Resources and Acknowledgements
 
-The GAN-based approach is based on the concept and implementation of CycleGAN, introduced in the paper "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks." by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
+The GAN-based approach is based on the concept and implementation of CycleGAN, introduced in the paper ["Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks."](https://ar5iv.labs.arxiv.org/html/1703.10593) by Jun-Yan Zhu, Taesung Park, Phillip Isola and Alexei A. Efros.
 
-The Diffusion-based approach is based on the concept and implementation of UNSB, introduced in the paper: "Unpaired image-to-image translation via
-neural schroedinger bridge". by Kim, B., Kwon, G., Kim, K., Ye, J.C.
+The Diffusion-based approach is based on the concept and implementation of UNSB, introduced in the paper: ["Unpaired image-to-image translation via
+neural schroedinger bridge".](https://www.researchgate.net/publication/371009695_Unpaired_Image-to-Image_Translation_via_Neural_Schrodinger_Bridge/fulltext/646ed23637d6625c002e5403/Unpaired-Image-to-Image-Translation-via-Neural-Schrodinger-Bridge.pdf) by Kim, B., Kwon, G., Kim, K., Ye, J.C.
 
 We thank [pytorch-fid](https://github.com/mseitzer/pytorch-fid) for FID calculation.
 
