@@ -31,7 +31,7 @@ Use the segmentation model implementation available at https://github.com/hcu-cm
 | Layer | Information |
 |:-    | :-     |
 | Style-Transferred Historical Maps (from OSM)| v.i. |
-|Straube Maps, Berlin 1910|• Map corpus analysed in this study comprising 39 historical city maps of Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
+|[Straube Maps, Berlin 1910](https://gdi.berlin.de/geonetwork/srv/ger/catalog.search#/metadata/9271450c-f95a-358a-9cff-093484cb73ae)|• Map corpus analysed in this study comprising 39 historical city maps of Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
 |[Aerial Images, Berlin 1928](https://gdi.berlin.de/geonetwork/srv/ger/catalog.search#/metadata/6b746499-7354-3a3a-aa70-60e1fb37f993)|• Aerial images of Berlin, Germany, taken in 1928 <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
 | [OpenStreetMap](https://www.openstreetmap.org/) | • Shows the default OSM tile style|
 | Predicted Land Cover Classes (uncertainty simulation through CycleGAN) |• Results of the semantic segmentation on a unseen historical map corpus (in this work Staube maps) |
