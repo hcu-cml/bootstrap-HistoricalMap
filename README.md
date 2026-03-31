@@ -19,9 +19,9 @@ This repository contains the source code for our paper:
 [**Jan-Henrik Haunert**](https://www.igg.uni-bonn.de/geoinfo/en/team/haunert),
 [**Youness Dehbi**](https://www.hcu-hamburg.de/en/youness-dehbi),
 
-Which proposes a novel method for historical map generation that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion. Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding semantic class annotations for land cover classes that can be used as ground-truth training data for deep learning models.
+which proposes a novel method for historical map generation and land-cover segmentatio that utilizes state-of-the-art deep generative models, specifically Generative Adversarial Networks (GANs) and Stable Diffusion (SD). Our method accepts arbitrary vector data as input to synthesize historical maps in diverse cartographic styles. In addition to historical maps, it generates corresponding land-cover ground truth that are used as training data for supervised learning approaches.
 
-We showcase our method’s effectiveness by generating historical-style maps of Berlin via style transfer from an original historical map corpus. The predicted land cover classes, historical maps, and styled OSM data can be explored in our interactive web viewer: http://88.198.55.211/map/
+We showcase our method’s effectiveness by generating historically-styled maps via style transfer from an real historical map corpus (in this work Straube maps). The land-cover predictions, real historical maps, modern vector data (OSM) and style-transferred historical maps can be explored in our interactive [web viewer.](https://www.cml.hcu-hamburg.de/demos/historicalMaps-bootstrapping/viewer/)
 
 ## Domain-adaptive semantic segmentation
 Use the segmentation model implementation available at https://github.com/hcu-cml/SCGCN-histMap-segmentation.
@@ -30,10 +30,11 @@ Use the segmentation model implementation available at https://github.com/hcu-cm
 
 | Layer | Information |
 |:-    | :-     |
-| Bootstrapped Historical Maps (OSM)| v.i. |
+| Style-Transferred Historical Maps (from OSM)| v.i. |
 |Straube Maps|• Map corpus analysed in this study comprising 39 historical city maps of Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
+|Airial Images|• Test Berlin, Germany <br> • Provided by the [State Library of Berlin](https://staatsbibliothek-berlin.de/) |
 | [OSM](https://www.openstreetmap.org/) | • Shows the default OSM tile style|
-| Predicted Land Cover Classes |• Results of the semantic segmentation using a synthetically generated dataset |
+| Land-Cover Predictions |• Results of the semantic segmentation on a unseen historical map corpus (in this work Staube maps) |
 
 
 ### Generated Historical Maps (OSM)
