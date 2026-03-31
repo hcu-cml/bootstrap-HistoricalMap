@@ -6,7 +6,7 @@ const locationiqURL = 'https://tiles.locationiq.com/v3/pbf/tiles.json?key=YOUR-A
 // OSM Layer
 var osmLayer = new ol.layer.Tile({
   source: new ol.source.OSM(),
-  title: 'OpenStreeMap',
+  title: 'OpenStreetMap',
   type: 'base1',
   visible: true
 });
