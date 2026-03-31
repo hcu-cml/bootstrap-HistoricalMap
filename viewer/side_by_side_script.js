@@ -23,7 +23,7 @@ var segMaskLayer = new ol.layer.Tile({
 });
 
 
-// Straubes uebersichtsplan Layer
+// Straube Maps Layer
 const geotiffLayerRight = new ol.layer.Tile({
   source: new ol.source.XYZ({
       url: 'data/historical_maps/{z}/{x}/{y}.png',
@@ -35,7 +35,7 @@ const geotiffLayerRight = new ol.layer.Tile({
 });
 
 
-// Aerial images Berlin 1928 Layer
+// Aerial images, Berlin 1928 Layer
 const aerialImageLayer = new ol.layer.Tile({
   source: new ol.source.XYZ({
       url: 'https://tiles.codefor.de/berlin/geoportal/luftbilder/1928/{z}/{x}/{y}.png',
