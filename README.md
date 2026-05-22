@@ -79,14 +79,16 @@ The used test dataset can be found [here](https://zenodo.org/records/17579452).
 
 ### <u> Cite </u>
 
-<pre><code>@Article{bootstrapHistoricalMaps,
-AUTHOR = {},
-TITLE = {},
-JOURNAL = {},
-YEAR = {},
-PAGES = {x--x},
-DOI = {}
-}</code></pre>
+<pre><code>
+@Article{bootstrapHistoricalMaps,
+AUTHOR={Arzoumanidis, Lukas and Knechtel, Julius and Haunert, Jan-Henrik and Dehbi, Youness},
+TITEL={Automatic uncertainty-aware synthetic data bootstrapping for historical map segmentation},
+JOURNAL={International Journal on Document Analysis and Recognition (IJDAR)},
+YEAR={2026},
+ISSN={1433-2825},
+DOI={10.1007/s10032-026-00582-w},
+}
+</code></pre>
 
 ### <u> Previous Work </u>
 
