@@ -11,7 +11,7 @@
 
 ## Project Description
 
-This repository contains the source code for our paper:
+This repository contains the source code for the web viewer accompanying our paper:
 
 [Automatic Uncertainty-Aware Synthetic Data Bootstrapping for Historical Map Segmentation]() </br>
 [**Lukas Arzoumanidis**](https://scholar.google.com/citations?user=cbWaN7MAAAAJ&hl=en),
